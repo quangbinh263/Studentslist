@@ -1,0 +1,75 @@
+.myfirstcss {
+  color: red;
+  font-size: large;
+}
+
+.underAge {
+  color: red;
+}
+
+.overAge {
+  color: blue;
+  background-color: burlywood;
+}
+
+.container {
+  margin: 10px;
+  width: 90%;
+  align-items: center;
+
+}
+
+.nav {
+  width: 90%;
+  background-color: whitesmoke;
+  justify-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.logo {
+  width: 120px;
+}
+
+.a:link {
+  color: black;
+}
+.a:hover{
+  color: orange;
+}
+
+.newWords{
+  margin: 20px;
+  padding: 10px;
+  background-color: burlywood;
+  width: 300px;
+}
+.item {
+  border-radius: .2em;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 2em;
+  padding: 4em 1em;
+  text-transform: uppercase;
+}
+
+.item-1 {
+  background-color: #009169;
+}
+
+.item-2 {
+  background-color: #55b296;
+}
+
+.item-3 {
+  background-color: #9fd3c3;
+}
+
+.item-4 {
+  background-color: #e7b013;
+}
+
+.item-5 {
+  background-color: #073443;
+}
+

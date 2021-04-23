@@ -1,0 +1,17 @@
+<div class="title" fxLayout="row" fxLayoutAlign="center center">
+  <form [formGroup]='studentInfo'>
+    <mat-form-field>
+      <input matInput placeholder="Ten sinh vien" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Ma sinh vien" formControlName="id">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Lop" formControlName="class">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Dia chi" formControlName="address">
+    </mat-form-field>
+    <button mat-raised-button color='primary' (click)='createStudent(studentInfo.value)' >Tao moi</button>
+  </form>
+</div>

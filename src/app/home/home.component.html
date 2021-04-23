@@ -1,0 +1,46 @@
+
+  <!-- <nav class="nav">
+    <div class="nav-wrapper white">
+      <a href="#" class="brand-logo"><img class="logo" src="https://www.logivan.com/wp-content/uploads/2019/05/logo-02.png" alt=""></a>
+      <ul class='link'>
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
+  <h1 [style.color]="name.length % 2 === 0? 'red' : 'black'" [hidden]= 'show'>Hello {{name | uppercase}}</h1>
+  <button (click) = "show = !show">Toggle hidden</button>
+  <img [src]="heroImageUrl">
+  <h1 >You are {{age}}</h1>
+  <p>Your birthday is {{birthDay | date: 'short'}}</p>
+  <p> {{1.9}} </p>
+  <input [(ngModel)]='name'>
+  <button (click) = "addAge()">Add age</button>
+  <select [(ngModel)]='filterStatus'>
+    <option value="allWords">All words</option>
+    <option value="notRemember">Not remember</option>
+    <option value="remember">Remember</option>
+  </select>
+
+  <div class='newWords' *ngFor='let word of newWords'>
+    <div *ngIf='showWords(word.memorized)' >
+      <h4 [ngStyle]="{color: word.memorized ? 'green' : 'red' }">{{word.en}}</h4>
+      <p> {{word.vn}} </p>
+      <button (click)='deleteWord(word.id)'>Delete</button>
+      <button (click)='word.memorized=!word.memorized'> {{word.memorized ? 'Forget' : 'Remember'}}</button>
+    </div>
+  </div>
+  <div *ngIf='showNew'>
+    <input  [(ngModel)]= 'newEn' placeholder="English">
+    <input  [(ngModel)]= 'newVn' placeholder="Vietnamese">
+  </div>
+
+  <div *ngIf = "showNew; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock><button (click)= 'createNew()' >Create new</button></ng-template>
+  <ng-template #elseBlock ><button (click)= 'showNew=!showNew' >Create new</button></ng-template>
+
+
+ -->
+ <h1>Home Page</h1>
+<a routerLink='/students'>Students</a>

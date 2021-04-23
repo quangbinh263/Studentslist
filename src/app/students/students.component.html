@@ -1,0 +1,37 @@
+<div class="title" fxLayout="row" fxLayoutAlign="center center">
+  <h1>Danh sach sinh vien</h1>
+</div>
+<app-newstudent (newStudent)="addStudent($event)"></app-newstudent>
+<p></p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Ten</th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Ma sinh vien </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Class Column -->
+  <ng-container matColumnDef="class">
+    <th mat-header-cell *matHeaderCellDef> Lop </th>
+    <td mat-cell *matCellDef="let element"> {{element.class}} </td>
+  </ng-container>
+
+  <!-- Address Column -->
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Dia Chi </th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
