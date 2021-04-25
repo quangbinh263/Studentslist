@@ -21,6 +21,8 @@ import { MaterialModule } from './material/material.module';
 import { StudentsComponent } from './students/students.component';
 import { StudentComponent } from './student/student.component';
 import { NewstudentComponent } from './newstudent/newstudent.component';
+import { SearchComponent } from './search/search.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -37,9 +39,10 @@ import { NewstudentComponent } from './newstudent/newstudent.component';
     RoundPipe,
     IpComponent,
     SigninComponent,
-    StudentsComponent,
     StudentComponent,
-    NewstudentComponent
+    NewstudentComponent,
+    SearchComponent,
+    StudentsComponent
 
   ],
   imports: [
@@ -50,7 +53,9 @@ import { NewstudentComponent } from './newstudent/newstudent.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    MatDialogModule
+
 
   ],
   providers: [],

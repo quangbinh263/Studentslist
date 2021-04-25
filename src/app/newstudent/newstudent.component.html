@@ -1,5 +1,5 @@
 <div class="title" fxLayout="row" fxLayoutAlign="center center">
-  <form [formGroup]='studentInfo'>
+  <!-- <form [formGroup]='studentInfo'>
     <mat-form-field>
       <input matInput placeholder="Ten sinh vien" formControlName="name">
     </mat-form-field>
@@ -13,5 +13,65 @@
       <input matInput placeholder="Dia chi" formControlName="address">
     </mat-form-field>
     <button mat-raised-button color='primary' (click)='createStudent(studentInfo.value)' >Tao moi</button>
+  </form> -->
+  <!-- <ol>
+    <form [formGroup]='studentInfo'>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Ten sinh vien" formControlName="name">
+        </mat-form-field>
+      </li>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Ma sinh vien" formControlName="id">
+        </mat-form-field>
+      </li>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Lop" formControlName="class">
+        </mat-form-field>
+      </li>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Dia chi" formControlName="address">
+        </mat-form-field>
+      </li>
+      <li>
+        <button mat-raised-button (click)="createStudent(studentInfo.value)">Pick one</button>
+      </li>
+    </form>
+  </ol> -->
+
+  <h1 mat-dialog-title>Nhap sinh vien moi</h1>
+<div mat-dialog-content>
+  <form [formGroup]='studentInfo'>
+    <ol>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Ten sinh vien" formControlName="name">
+        </mat-form-field>
+      </li>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Ma sinh vien" formControlName="id">
+        </mat-form-field>
+      </li>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Lop" formControlName="class">
+        </mat-form-field>
+      </li>
+      <li>
+        <mat-form-field>
+          <input matInput placeholder="Dia chi" formControlName="address">
+        </mat-form-field>
+      </li>
+    </ol>
+
+      <button mat-raised-button (click)="createStudent(studentInfo.value)">Tao Moi</button>
+
   </form>
+
 </div>
+
+
