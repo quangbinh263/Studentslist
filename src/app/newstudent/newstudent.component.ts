@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, FormArray } from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSort } from '@angular/material/sort';
@@ -11,7 +11,7 @@ export interface Studentslist {
   id: string;
   class: string;
   address: string;
-  isShow: boolean
+  // isShow: boolean
 }
 
 @Component({
@@ -22,21 +22,26 @@ export interface Studentslist {
 export class NewstudentComponent implements OnInit {
   studentInfo!: FormGroup;
   @Output() newStudent = new EventEmitter<Studentslist>();
-    createStudent(value: Studentslist){
-    this.newStudent.emit(value)
-  }
 
-  constructor(private fb: FormBuilder) { }
+
+  constructor(private fb: FormBuilder,
+    private matDialogRef: MatDialogRef<NewstudentComponent>,
+                          @Inject(MAT_DIALOG_DATA) public data:{id: string, name: string, class: string, address: string}) { }
 
 
   ngOnInit() {
     this.studentInfo = this.fb.group({
-      name: '',
-      id: '',
-      class: '',
-      address: '',
-      isShow: true
+      name: this.data?this.data.name:undefined,
+      id: this.data?this.data.id:undefined,
+      class: this.data?this.data.class:undefined,
+      address: this.data?this.data.address:undefined,
+      // isShow: true
     });
   }
 
+  createStudent(value: Studentslist){
+    this.matDialogRef.close(value)
+  }
+
 }
+

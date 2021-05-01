@@ -7,6 +7,11 @@ import { MatChipsModule} from '@angular/material/chips';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -18,7 +23,11 @@ const MaterialComponents = [
   MatChipsModule,
   MatTableModule,
   MatSortModule,
-  MatDialogModule
+  MatDialogModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatMenuModule,
+  MatCardModule
 ]
 
 

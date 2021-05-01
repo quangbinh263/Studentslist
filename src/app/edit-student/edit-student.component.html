@@ -1,0 +1,139 @@
+
+  <div fxLayout='column'>
+    <div class="topMenu" fxLayout='row' fxLayoutAlign="space-around center" >
+
+      <div fxHide.md fxLayout='column'>
+        <div>
+          <button mat-icon-button color='warn' (click)='isShow=!isShow' ><mat-icon>menu</mat-icon></button>
+        </div>
+      </div>
+
+      <div>
+        <img class="logo" src="https://www.logivan.com/wp-content/uploads/2019/05/logo-02.png" />
+      </div>
+      <div class="navbar" fxHide.lt-md>
+        <a href="#">Gioi thieu</a>
+        <a href="#">Tin tuc</a>
+        <div class="dropdown">
+          <button class="dropbtn">San pham
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <a href="#">Tuyen dung</a>
+        <a href="#">Lien he</a>
+      </div>
+      <div >
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAflJREFUeNpinDRzn5qN3uFDt16+YWBg+Pv339+KGN0rbVP+//2rW5tf0Hfy/2+mr99+yKpyOl3Ydt8njEWIn8f9zj639NC7j78eP//8739GVUUhNUNuhl8//ysKeZrJ/v7z10Zb2PTQTIY1XZO2Xmfad+f7XgkXxuUrVB6cjPVXef78JyMjA8PFuwyX7gAZj97+T2e9o3d4BWNp84K1NzubTjAB3fH0+fv6N3qP/ir9bW6ozNQCijB8/8zw/TuQ7r4/ndvN5mZgkpPXiis3Pv34+ZPh5t23//79Rwehof/9/NDEgMrOXHvJcrllgpoRN8PFOwy/fzP8+gUlgZI/f/5xcPj/69e/37//AUX+/mXRkN555gsOG2xt/5hZQMwF4r9///75++f3nz8nr75gSms82jfvQnT6zqvXPjC8e/srJQHo9P9fvwNtAHmG4f8zZ6dDc3bIyM2LTNlsbtfM9OPHH3FhtqUz3eXX9H+cOy9ZMB2o6t/Pn0DHMPz/b+2wXGTvPlPGFxdcD+mZyjP8+8MUE6sa7a/xo6Pykn1s4zdzIZ6///8zMGpKM2pKAB0jqy4UE7/msKat6Jw5mafrsxNtWZ6/fjvNLW29qv25pQd///n+5+/fxDDVbcc//P/zx/36m5Ub9zL8+7t66yEROcHK7q5bldMBAgwADcRBCuVLfoEAAAAASUVORK5CYII=" />
+      </div>
+      <div fxHide.lt-md>
+        <button class="buttonSearch">Tra cuu gia cuoc</button>
+      </div>
+
+
+  </div>
+  <div class="menuBar" fxLayout='column' fxHide.md *ngIf='isShow'>
+
+    <button class="buttonSearch">Tra cuu gia cuoc</button>
+    <a href="#">Gioi thieu</a>
+    <a href="#">Tin tuc</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">San pham
+          <button mat-button [matMenuTriggerFor]="menu"><mat-icon class="fa-caret-down">arrow_drop_down</mat-icon></button>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+
+    <a href="#">Tuyen dung</a>
+    <a href="#">Lien he</a>
+
+</div>
+</div>
+
+
+
+<!-- <mat-toolbar fxLayoutAlign="space-around center">
+  <div fxHide.md fxLayout='column'>
+    <div>
+      <button mat-icon-button color='warn' (click)='isShow=!isShow' ><mat-icon>menu</mat-icon></button>
+    </div>
+  </div>
+  <div>
+    <img class="logo" src="https://www.logivan.com/wp-content/uploads/2019/05/logo-02.png" />
+  </div>
+  <div class="navbar" fxHide.lt-md>
+    <a href="#">Gioi thieu</a>
+    <a href="#">Tin tuc</a>
+    <div class="dropdown">
+     <ul></ul>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <a href="#">Tuyen dung</a>
+    <a href="#">Lien he</a>
+  </div>
+  <div >
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAflJREFUeNpinDRzn5qN3uFDt16+YWBg+Pv339+KGN0rbVP+//2rW5tf0Hfy/2+mr99+yKpyOl3Ydt8njEWIn8f9zj639NC7j78eP//8739GVUUhNUNuhl8//ysKeZrJ/v7z10Zb2PTQTIY1XZO2Xmfad+f7XgkXxuUrVB6cjPVXef78JyMjA8PFuwyX7gAZj97+T2e9o3d4BWNp84K1NzubTjAB3fH0+fv6N3qP/ir9bW6ozNQCijB8/8zw/TuQ7r4/ndvN5mZgkpPXiis3Pv34+ZPh5t23//79Rwehof/9/NDEgMrOXHvJcrllgpoRN8PFOwy/fzP8+gUlgZI/f/5xcPj/69e/37//AUX+/mXRkN555gsOG2xt/5hZQMwF4r9///75++f3nz8nr75gSms82jfvQnT6zqvXPjC8e/srJQHo9P9fvwNtAHmG4f8zZ6dDc3bIyM2LTNlsbtfM9OPHH3FhtqUz3eXX9H+cOy9ZMB2o6t/Pn0DHMPz/b+2wXGTvPlPGFxdcD+mZyjP8+8MUE6sa7a/xo6Pykn1s4zdzIZ6///8zMGpKM2pKAB0jqy4UE7/msKat6Jw5mafrsxNtWZ6/fjvNLW29qv25pQd///n+5+/fxDDVbcc//P/zx/36m5Ub9zL8+7t66yEROcHK7q5bldMBAgwADcRBCuVLfoEAAAAASUVORK5CYII=" />
+  </div>
+  <div fxHide.lt-md>
+    <button class="buttonSearch">Tra cuu gia cuoc</button>
+  </div>
+</mat-toolbar> -->
+
+
+  </div>
+  <div class="section1" fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayout.lt-sm='column'>
+    <div class="left-section1" fxFlex='50'>
+      <mat-card class="example-card">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-header class="bottomleft">
+          <mat-card-title>QUY TẮC ỨNG XỬ ĐỐI TÁC TÀI XẾ LOGIVAN</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+
+    </div>
+    <div class='right-section1' fxFlex='30'>
+      <div class="news-column">
+        <h1>TIN MỚI NHẤT</h1>
+      <mat-card class="news-card" fxLayout='row'>
+        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-header fxLayout='column' fxLayoutAlign="space-evenly none">
+          <mat-card-title>Điều khoản sử dụng cho Logivan Chủ hàng</mat-card-title>
+          <mat-card-content> ĐIỀU KHOẢN SỬ DỤNG Giới thiệu chung Giới thiệu  CÔNG TY TNHH CÔNG NGHỆ VẬN TẢI LGV là một công ty thành viên...</mat-card-content>
+        </mat-card-header>
+
+      </mat-card>
+      <mat-card class="news-card" fxLayout='row' fxLayoutAlign="space-evenly none">
+        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-header fxLayout='column'>
+          <mat-card-title>Điều khoản sử dụng cho Logivan Chủ hàng</mat-card-title>
+          <mat-card-content> ĐIỀU KHOẢN SỬ DỤNG Giới thiệu chung Giới thiệu  CÔNG TY TNHH CÔNG NGHỆ VẬN TẢI LGV là một công ty thành viên...</mat-card-content>
+        </mat-card-header>
+
+      </mat-card>
+      <mat-card class="news-card" fxLayout='row' fxLayoutAlign="space-evenly none">
+        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-header fxLayout='column'>
+          <mat-card-title>Điều khoản sử dụng cho Logivan Chủ hàng</mat-card-title>
+          <mat-card-content> ĐIỀU KHOẢN SỬ DỤNG Giới thiệu chung Giới thiệu  CÔNG TY TNHH CÔNG NGHỆ VẬN TẢI LGV là một công ty thành viên...</mat-card-content>
+        </mat-card-header>
+
+      </mat-card>
+      </div>
+
+    </div>
+</div>
+
+
+

@@ -42,28 +42,28 @@
     </form>
   </ol> -->
 
-  <h1 mat-dialog-title>Nhap sinh vien moi</h1>
+  <!-- <h1 mat-dialog-title>Nhap sinh vien moi</h1>
 <div mat-dialog-content>
   <form [formGroup]='studentInfo'>
     <ol>
       <li>
         <mat-form-field>
-          <input matInput placeholder="Ten sinh vien" formControlName="name">
+          <input matInput placeholder="Ten sinh vien" formControlName="name" required>
         </mat-form-field>
       </li>
       <li>
         <mat-form-field>
-          <input matInput placeholder="Ma sinh vien" formControlName="id">
+          <input matInput placeholder="Ma sinh vien" formControlName="id" required>
         </mat-form-field>
       </li>
       <li>
         <mat-form-field>
-          <input matInput placeholder="Lop" formControlName="class">
+          <input matInput placeholder="Lop" formControlName="class" required>
         </mat-form-field>
       </li>
       <li>
         <mat-form-field>
-          <input matInput placeholder="Dia chi" formControlName="address">
+          <input matInput placeholder="Dia chi" formControlName="address" required>
         </mat-form-field>
       </li>
     </ol>
@@ -72,6 +72,76 @@
 
   </form>
 
-</div>
+</div> -->
+
+<div *ngIf="data; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <h1 mat-dialog-title>Sua sinh vien </h1>
+  <div mat-dialog-content>
+    <form [formGroup]='studentInfo'>
+      <ol>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder={{data.name}} formControlName="name" required>
+          </mat-form-field>
+        </li>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder={{data.id}} formControlName="id" required>
+          </mat-form-field>
+        </li>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder={{data.class}} formControlName="class" required>
+          </mat-form-field>
+        </li>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder={{data.address}} formControlName="address" required>
+          </mat-form-field>
+        </li>
+      </ol>
+
+        <button mat-raised-button (click)="createStudent(studentInfo.value)">Sua</button>
+
+    </form>
+
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+
+  <h1 mat-dialog-title>Nhap sinh vien moi</h1>
+  <div mat-dialog-content>
+    <form [formGroup]='studentInfo'>
+      <ol>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder="Ten sinh vien" formControlName="name" required>
+          </mat-form-field>
+        </li>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder="Ma sinh vien" formControlName="id" required>
+          </mat-form-field>
+        </li>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder="Lop" formControlName="class" required>
+          </mat-form-field>
+        </li>
+        <li>
+          <mat-form-field>
+            <input matInput placeholder="Dia chi" formControlName="address" required>
+          </mat-form-field>
+        </li>
+      </ol>
+
+        <button mat-raised-button (click)="createStudent(studentInfo.value)">Tao Moi</button>
+
+    </form>
+
+  </div>
+
+</ng-template>
 
 

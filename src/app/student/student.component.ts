@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Params } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap, RouterEvent } from '@angular/router';
+import { Observable } from 'rxjs';
+import {StudentsComponent} from '../students/students.component';
+import { switchMap } from 'rxjs/operators';
+import { Studentslist ,ELEMENT_DATA } from '../app.component';
+
 
 @Component({
   selector: 'app-student',
@@ -8,12 +12,14 @@ import { Params } from '@angular/router';
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent implements OnInit {
-  name = '';
-  id ='';
-  class = '';
-  address = '';
 
-  constructor(private route: ActivatedRoute) { }
+  id: any;
+  studentInfo!: Studentslist [];
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     // this.route.paramMap.subscribe( Params: ParamMap) => {
@@ -28,6 +34,10 @@ export class StudentComponent implements OnInit {
     //   this.class = params['class'],
     //   this.address = params['address']
     // })
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log(this.id);
+    this.studentInfo = ELEMENT_DATA.filter(item => item.id === this.id)
     }
+
   }
 
